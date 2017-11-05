@@ -1,11 +1,18 @@
-\documentclass[ngerman]{scrartcl}
+\documentclass[ngerman]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 
+\usepackage{graphicx}
+
+\usepackage{palatino}
+
 \usepackage{scrpage2}
 \pagestyle{scrheadings}
+
+\setheadsepline[\textwidth]{1pt}{}
+\setfootsepline[\textwidth]{1pt}{} 
  
 \ohead{\headmark} % 
 \ofoot{\pagemark} %  
@@ -27,9 +34,24 @@
 
 \tableofcontents
 
+\listoffigures
+
+\listoftables
+
+\chapter{Open Rhein Ruhr}
+
 \section{Einleitung}\label{sec:einleitung}
 
 The above links use the generic mirror.ctan.org url which autoredirects to a CTAN mirror that should be reasonably nearby and reasonably up to date. However, perfect synchronization is not possible; if you have troubles following the links, your best bet is to choose explicitly from the list of CTAN mirrors (you'll need to append systems/texlive/tlnet to the top-level mirror urls given there to get to the TL area). 
+
+\begin{figure}
+\begin{center}
+\includegraphics{meinbild}
+\caption{Hallo, ich bin ein Bild}\label{fig:meinbild}
+\end{center}
+\end{figure}
+
+Siehe Abbildung \ref{fig:meinbild} auf Seite \pageref{fig:meinbild}
 
 The above links use the generic mirror.ctan.org url which autoredirects to a CTAN mirror that should be reasonably nearby and reasonably up to date. However, perfect synchronization is not possible; if you have troubles following the links, your best bet is to choose explicitly from the list of CTAN mirrors (you'll need to append systems/texlive/tlnet to the top-level mirror urls given there to get to the TL area). 
 

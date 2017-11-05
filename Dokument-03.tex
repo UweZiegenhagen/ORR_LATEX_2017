@@ -1,11 +1,48 @@
-\documentclass[ngerman]{scrartcl}
+\documentclass[ngerman]{scrreprt}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{babel}
 
+\usepackage{listings}
+
+\usepackage[]{xcolor}
+\definecolor{hellgelb}{rgb}{1,1,0.8}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{1,0,0}
+\definecolor{colString}{rgb}{0,0.5,0}
+
+\lstset{%
+    float=hbp,%
+    basicstyle=\ttfamily\small, %
+    identifierstyle=\color{colIdentifier}, %
+    keywordstyle=\color{colKeys}, %
+    stringstyle=\color{colString}, %
+    commentstyle=\color{colComments}, %
+    columns=flexible, %
+    tabsize=2, %
+    frame=single, %
+    extendedchars=true, %
+    showspaces=false, %
+    showstringspaces=false, %
+    numbers=left, %
+    numberstyle=\tiny, %
+    breaklines=true, %
+    backgroundcolor=\color{hellgelb}, %
+    breakautoindent=true, %
+    captionpos=b%
+}
+
+\usepackage{graphicx}
+
+\usepackage{palatino}
+
 \usepackage{scrpage2}
 \pagestyle{scrheadings}
+
+\setheadsepline[\textwidth]{1pt}{}
+\setfootsepline[\textwidth]{1pt}{} 
  
 \ohead{\headmark} % 
 \ofoot{\pagemark} %  
@@ -27,9 +64,24 @@
 
 \tableofcontents
 
+\listoffigures
+
+\listoftables
+
+\chapter{Open Rhein Ruhr}
+
 \section{Einleitung}\label{sec:einleitung}
 
 The above links use the generic mirror.ctan.org url which autoredirects to a CTAN mirror that should be reasonably nearby and reasonably up to date. However, perfect synchronization is not possible; if you have troubles following the links, your best bet is to choose explicitly from the list of CTAN mirrors (you'll need to append systems/texlive/tlnet to the top-level mirror urls given there to get to the TL area). 
+
+\begin{figure}
+\begin{center}
+\includegraphics{meinbild}
+\caption{Hallo, ich bin ein Bild}\label{fig:meinbild}
+\end{center}
+\end{figure}
+
+Siehe Abbildung \ref{fig:meinbild} auf Seite \pageref{fig:meinbild}
 
 The above links use the generic mirror.ctan.org url which autoredirects to a CTAN mirror that should be reasonably nearby and reasonably up to date. However, perfect synchronization is not possible; if you have troubles following the links, your best bet is to choose explicitly from the list of CTAN mirrors (you'll need to append systems/texlive/tlnet to the top-level mirror urls given there to get to the TL area). 
 
@@ -45,10 +97,30 @@ Hallo, ich bin\footnote{Ich bin die erste Fußnote. However, perfect synchroniza
 
 dsaihfois idshf is fhfdoi idsfoids oidshf oisifdso
 
+\begin{table}
+\caption{Ich bin eine Tabelle}
+\begin{tabular}{lcrp{5cm}}
+\bfseries Spalte 1 &\bfseries  Spalte 2 &\bfseries  Spalte 3 &\bfseries  Spalte 4 \\ \hline
+Erste Spalte & 3231 & rechtsbündig & Hallo, ich bin ein Text \\ \hline
+Erste Spalte & 3r534231 & noch rechtsbündig & Hallo, ich bin ein Text, ich hab euch lieb \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Source Code}
+
+\lstinputlisting[language=Python,morekeywords={propagate}]{test.py}
+
 
 \section{Fazit}
 
 Zusammenfassend konnte in dieser Arbeit gezeigt werden, das es signifikante Unterschiede zwischen A und B gibt. Weitere Forschung wird genausowenig Resultate bringen.
+
+\begin{equation}\label{eq:quad}
+-\frac{p}{2} \pm \sqrt{ \left(\frac{p}{2}\right)^2  -q }
+\end{equation}
+
+Siehe Formel \ref{eq:quad}
+
 
 Siehe Abschnitt \ref{sec:einleitung} auf Seite \pageref{sec:einleitung}
 
